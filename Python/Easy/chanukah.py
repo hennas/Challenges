@@ -1,10 +1,9 @@
-def main():
-    from sys import stdin
-    stdin.readline()
-    for line in stdin:
-        num, days = map(int, line.split())
-        candles = sum([c+1 for c in range(1,days+1)])
-        print(f'{num} {candles}')
+from sys import stdin, stdout
+def func(val):
+    idx = val.index(' ')
+    days = int(val[idx:])
+    stdout.write(f'{val[:idx]} {days*(days+1)//2 + days}\n')
+
 
 if __name__ == '__main__':
-    main()
+    list(map(func, stdin.readlines()[1:]))
