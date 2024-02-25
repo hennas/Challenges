@@ -9,7 +9,7 @@ def print_result(corners, corner_info):
     print(n_of_corners + ' ' + res)
 
 
-def calc_n_dot_prod(info, n_info, order=['right', 'left']):
+def calc_neighbor_cosine(info, n_info, order=['right', 'left']):
     n_info[order[0] + 'x'] = info[order[0] + 'x'] - info[order[1] + 'x']
     n_info[order[0] + 'y'] = info[order[0] + 'y'] - info[order[1] + 'y']
     n_info[order[0] + 'l'] = sqrt(n_info[order[0] + 'x']**2 + n_info[order[0] + 'y']**2)
@@ -29,8 +29,8 @@ def cut_corners(corner_info, cosines, corners):
     right = info['rightn']
     r_info = corner_info[right]
 
-    l_cos = calc_n_dot_prod(info, l_info)
-    r_cos = calc_n_dot_prod(info, r_info, ['left', 'right'])
+    l_cos = calc_neighbor_cosine(info, l_info)
+    r_cos = calc_neighbor_cosine(info, r_info, ['left', 'right'])
 
     if l_cos > max_cos or r_cos > max_cos:
         return
