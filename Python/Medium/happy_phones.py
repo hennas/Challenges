@@ -1,4 +1,4 @@
-import sys
+from sys import stdin
 
 
 def calculate_active_calls_for_each_interval(info):
@@ -13,7 +13,7 @@ def get_test_case_info():
     intervals = 0
     test_cases = {}
     case_n = 0
-    for line in sys.stdin:
+    for line in stdin:
         ints = list(map(int, line.split()))
         if calls + intervals == 0:
             calls, intervals = ints
@@ -34,7 +34,7 @@ def get_test_case_info():
     return test_cases
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     test_cases = get_test_case_info()
     for info in test_cases.values():
         calculate_active_calls_for_each_interval(info)
