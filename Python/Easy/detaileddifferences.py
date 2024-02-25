@@ -1,18 +1,11 @@
 def main():
-    from sys import stdin
-    amt = int(stdin.readline())
-    for _ in range(amt):
+    from sys import stdin, stdout
+    for _ in range(int(stdin.readline())):
         val1 = stdin.readline().strip()
         val2 = stdin.readline().strip()
-        diff = ''
-        for i, chr in enumerate(val1):
-            if val2[i] != chr:
-                diff += '*'
-            else:
-                diff += '.'
-        print(val1)
-        print(val2)
-        print(diff)
+        diff = ''.join([['*', '.'][val1[idx] == val2[idx]] for idx in range(len(val1))])
+        stdout.write('\n'.join([val1, val2, diff])+'\n')
+
 
 if __name__ == '__main__':
     main()
