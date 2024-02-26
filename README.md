@@ -1,2 +1,2 @@
 # Challenges
-A collection of coding challenges
+A collection of coding challenge solutions
