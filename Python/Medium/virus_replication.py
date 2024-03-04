@@ -21,10 +21,7 @@ def main():
             break
 
     if start == -1 or start > end:
-        if o_len >= i_len:
-            print(0)
-        else:
-            print(i_len - o_len)
+         print(0) if o_len >= i_len else print(i_len - o_len)
     else:
         print(end - start + 1)
 
