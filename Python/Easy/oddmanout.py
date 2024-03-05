@@ -1,14 +1,9 @@
 def main():
-    from sys import stdin
-    cases = int(next(stdin))
-    for case_num in range(cases):
-        next(stdin)
-        guest_nums = list(map(int, next(stdin).split()))
-        unique_guest_nums = list(set(guest_nums))
-        for guest_num in unique_guest_nums:
-            if guest_nums.count(guest_num) == 1:
-                print(f'Case #{case_num+1}: {guest_num}')
-                break
+    from collections import Counter
+    for case_num in range(int(input())):
+        input()
+        guest_nums_counter = Counter(list(map(int, input().split())))
+        print(f'Case #{case_num+1}: {guest_nums_counter.most_common()[len(guest_nums_counter)-1][0]}')
 
 
 if __name__ == '__main__':
