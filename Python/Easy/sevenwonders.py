@@ -1,9 +1,7 @@
 def main():
     from collections import Counter
     inp = Counter(input())
-    s = 0
-    for val in inp.items():
-        s += val[1]**2
+    s = sum([val**2 for val in inp.values()])
     vals = list(inp.values())
     if len(vals) == 3:
         while vals[0] > 0 and vals[1] > 0 and vals[2] > 0:
