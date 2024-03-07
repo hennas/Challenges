@@ -1,15 +1,10 @@
-from sys import stdin
-
-
 def main():
     space_counts = dict()
     total_bytes = 0
 
-    total_files = int(next(stdin))
-    for i in range(total_files):
-        total_lines = int(next(stdin))
-        for j in range(total_lines):
-            spaces_on_line = int(next(stdin))
+    for i in range(int(input())):
+        for j in range(int(input())):
+            spaces_on_line = int(input())
             if spaces_on_line > 0:
                 try:
                     space_counts[spaces_on_line] += 1
