@@ -1,16 +1,8 @@
 ALPH = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
 def rotate(msg_half):
-    new_half = ''
     rotate_val = sum([ALPH.index(char) for char in msg_half])
-    for char in msg_half:
-        int_val = ALPH.index(char)
-        for _ in range(rotate_val):
-            int_val += 1
-            if int_val > 25:
-                int_val = 0
-        new_half += ALPH[int_val]
-    return new_half
+    return ''.join([ALPH[(ALPH.index(char) + rotate_val)%26] for char in msg_half])
 
 
 def merge(f_half, s_half):
@@ -18,11 +10,7 @@ def merge(f_half, s_half):
     for i, char in enumerate(s_half):
         s_int_val = ALPH.index(char)
         f_int_val = ALPH.index(f_half[i])
-        for i in range(s_int_val):
-            f_int_val += 1
-            if f_int_val > 25:
-                f_int_val = 0
-        new_msg += ALPH[f_int_val]
+        new_msg += ALPH[(f_int_val + s_int_val)%26]
     return new_msg
 
 
