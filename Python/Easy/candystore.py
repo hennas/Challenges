@@ -1,5 +1,5 @@
 x=input
 N,Q=map(int,x().split())
-N=[x()for _ in range(N)]
-Z=[''.join(next(zip(*z.split())))for z in N]
-for _ in range(Q):q=x();c=Z.count(q);print(['ambiguous',N[Z.index(q)]][c==1]if c else'nobody')
+n,z=[],[]
+while N:n+=[x()];y=n[-1].split();z+=[y[0][0]+y[1][0]];N-=1
+while Q:q=x();c=z.count(q);print(['ambiguous',n[z.index(q)]][c==1]if c else'nobody');Q-=1
