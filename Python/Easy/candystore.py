@@ -1,8 +1,6 @@
 x=input
-n,q=map(int,x().split())
-n=[x().split()for _ in range(n)]
-q={x()+str(i):[]for i in range(q)}
-for i in q:
- for j in n:
-  if j[0][0]+j[1][0]in i:q[i]+=[' '.join(j)]
-for v in q.values():l=len(v);print('nobody'if l==0 else['ambiguous',v[0]][l==1])
+N,Q=map(int,x().split())
+N=[x()for _ in range(N)]
+Z=[z[0][0]+z[1][0]for z in[n.split()for n in N]]
+Q=[x()for _ in range(Q)]
+for q in Q:c=Z.count(q);print(['ambiguous',N[Z.index(q)]][c==1]if c else'nobody')
