@@ -1,0 +1,1 @@
+print(sum([len(s:=input().split())-len(set(s))for _ in range(int(input().split()[0]))]))
